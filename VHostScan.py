@@ -20,6 +20,8 @@ def main():
     parser.add_argument("-t",   dest="target_hosts", required=True, help="Set a target range of addresses to target. Ex 10.11.1.1-255" )
     parser.add_argument("-w",   dest="wordlist", required=False, type=str, help="Set the wordlist to use (default ./wordlists/virtual-host-scanning.txt)", default=False)
     parser.add_argument("-b",   dest="base_host", required=False, help="Set host to be used during substitution in wordlist (default to TARGET).", default=False)
+    parser.add_argument("-ap",  dest="prepend_transform", required=False, help="Prepent transform to each vhost in the wordlist. Example dev-<vhost>", default=False)
+    parser.add_argument("-at",  dest="append_transform", required=False, help="Append transform to each vhost in the wordlist", default=False)
     parser.add_argument("-p",   dest="port", required=False, help="Set the port to use (default 80).", default=80)
     parser.add_argument("-r",   dest="real_port", required=False, help="The real port of the webserver to use in headers when not 80 (see RFC2616 14.23), useful when pivoting through ssh/nc etc (default to PORT).", default=False)
 
